@@ -1,0 +1,41 @@
+{
+  "dataset": "Statewide Public School Aggregate Trends (Mock Data)",
+  "note": "This is synthetic, aggregate-only sample data created for a technical evaluation exercise. It does not represent real students, schools, or districts, and contains no individually identifiable information.",
+  "years": [
+    {
+      "year": "2020-21",
+      "totalEnrollment": 872400,
+      "graduationRatePct": 87.2,
+      "chronicAbsenteeismPct": 18.4,
+      "districtsReporting": 24
+    },
+    {
+      "year": "2021-22",
+      "totalEnrollment": 865900,
+      "graduationRatePct": 86.9,
+      "chronicAbsenteeismPct": 21.6,
+      "districtsReporting": 24
+    },
+    {
+      "year": "2022-23",
+      "totalEnrollment": 861200,
+      "graduationRatePct": 87.8,
+      "chronicAbsenteeismPct": 19.1,
+      "districtsReporting": 24
+    },
+    {
+      "year": "2023-24",
+      "totalEnrollment": 858700,
+      "graduationRatePct": 88.6,
+      "chronicAbsenteeismPct": 16.3,
+      "districtsReporting": 24
+    },
+    {
+      "year": "2024-25",
+      "totalEnrollment": 856300,
+      "graduationRatePct": 89.1,
+      "chronicAbsenteeismPct": 14.9,
+      "districtsReporting": 24
+    }
+  ]
+}

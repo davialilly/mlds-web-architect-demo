@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statewide Education Data Explorer (Technical Evaluation Demo)</title>
+  <meta name="description" content="Technical evaluation demo built for the MLDS Center Web Architect interview: a mock statewide education data page with an accessible chart, a documented Power BI embed pattern, and WCAG/FERPA statements." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title">
+        Statewide Education Data Explorer
+        <small>Maryland Longitudinal Data System Center &middot; Technical Evaluation Demo</small>
+      </p>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#privacy">Data &amp; privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <p class="demo-banner">
+    <strong>Demo notice:</strong> this page was built for a technical evaluation exercise and uses only synthetic, aggregate mock data. It is not affiliated with or published by an actual state agency.
+  </p>
+
+  <main id="main-content">
+    <section id="overview" class="hero" aria-labelledby="overview-heading">
+      <p class="section-eyebrow">Statewide trends</p>
+      <h1 id="overview-heading">Five years of statewide enrollment and graduation trends</h1>
+      <p class="lede">
+        This page presents mock, district-aggregated data in the same shape MLDS Center
+        publishes today: total enrollment, graduation rate, and chronic absenteeism,
+        tracked by school year across all reporting districts.
+      </p>
+
+      <ul class="stat-row">
+        <li class="stat">
+          <span class="stat__value" id="stat-enrollment">&mdash;</span>
+          <span class="stat__label">Total enrollment, most recent year</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value" id="stat-graduation">&mdash;</span>
+          <span class="stat__label" id="stat-graduation-delta">Statewide graduation rate</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value" id="stat-districts">&mdash;</span>
+          <span class="stat__label">Districts reporting</span>
+        </li>
+      </ul>
+      <p id="data-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="table-heading">
+      <p class="section-eyebrow">Underlying data</p>
+      <h2 id="table-heading">Year-over-year detail</h2>
+      <p>
+        The table below is the primary, always-accessible source for this data. The chart
+        beneath it presents the same graduation-rate figures visually, for readers who find
+        a chart easier to scan.
+      </p>
+
+      <div class="table-wrap">
+        <table id="trends-table">
+          <caption>Statewide aggregate trends by school year (mock data)</caption>
+          <thead>
+            <tr>
+              <th scope="col">School year</th>
+              <th scope="col">Total enrollment</th>
+              <th scope="col">Graduation rate</th>
+              <th scope="col">Chronic absenteeism</th>
+              <th scope="col">Districts reporting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populated by js/app.js from data/enrollment-trends.json -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-wrap">
+        <h3>Graduation rate by year</h3>
+        <svg id="trends-chart" aria-describedby="table-heading"></svg>
+      </div>
+    </section>
+
+    <section id="dashboard" aria-labelledby="dashboard-heading">
+      <p class="section-eyebrow">Interactive dashboard</p>
+      <h2 id="dashboard-heading">Power BI dashboard</h2>
+      <div class="dashboard-panel">
+        <p>
+          In production, this panel embeds a published Power BI report using the same
+          responsive iframe pattern used elsewhere on the MLDS Center website. This demo
+          shows the placement and labeling that pattern requires; the full embed code and
+          the step-by-step integration process are documented in
+          <a href="POWERBI-INTEGRATION.md">POWERBI-INTEGRATION.md</a>.
+        </p>
+        <div class="dashboard-embed" role="img" aria-label="Placeholder for an embedded Power BI report showing statewide enrollment and graduation trends.">
+          <div class="dashboard-embed__inner">
+            <h3>Power BI report embeds here</h3>
+            <p>
+              A live report requires a Power BI Pro/Premium workspace and a published
+              &ldquo;secure embed&rdquo; or &ldquo;publish to web&rdquo; URL, which this
+              evaluation environment does not have. See the integration document for the
+              exact iframe markup, sizing, and accessibility attributes to use once a real
+              report URL is available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessibility" aria-labelledby="accessibility-heading">
+      <p class="section-eyebrow">Standards</p>
+      <h2 id="accessibility-heading">Accessibility statement</h2>
+      <div class="statement-grid">
+        <div>
+          <h3>Conformance target</h3>
+          <p>
+            This page is built to conform to WCAG 2.1 Level AA, consistent with Section 508
+            and the U.S. Web Design System (USWDS) baseline MLDS Center already follows.
+          </p>
+        </div>
+        <div>
+          <h3>What this page does</h3>
+          <ul>
+            <li>Semantic landmarks (header, nav, main, section, footer) and one &lt;h1&gt; per page</li>
+            <li>A skip-to-content link as the first focusable element</li>
+            <li>A real, always-visible data table as the source of truth; the chart is a visual supplement, not a replacement</li>
+            <li>Color contrast checked at 4.5:1 or better for body text against its background</li>
+            <li>Visible keyboard focus states on every interactive element</li>
+            <li>No content that relies on color alone to convey meaning</li>
+            <li>Respects <code>prefers-reduced-motion</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-heading">
+      <p class="section-eyebrow">Data handling</p>
+      <h2 id="privacy-heading">Data &amp; privacy (FERPA alignment)</h2>
+      <div class="statement-grid">
+        <div>
+          <h3>What this demo uses</h3>
+          <p>
+            Every figure on this page comes from <code>data/enrollment-trends.json</code>, a
+            synthetic, district-aggregate file created for this exercise. It contains no
+            student names, IDs, dates of birth, or any other individually identifiable
+            information, and no data small enough in count to allow re-identification.
+          </p>
+        </div>
+        <div>
+          <h3>How this reflects FERPA in production</h3>
+          <ul>
+            <li>Public-facing pages and dashboards show aggregate data only, never student-level records</li>
+            <li>Aggregate cells below a minimum reporting threshold are suppressed rather than shown as small numbers</li>
+            <li>Any dashboard requiring student-level detail sits behind authenticated, role-based access, not on a public page</li>
+            <li>Source data pipelines and access are documented separately from the public site; see README.md</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>
+        Built as a technical evaluation exercise for the MLDS Center Web Architect
+        interview. See <a href="README.md">README.md</a> for the full build and deployment
+        write-up, and <a href="POWERBI-INTEGRATION.md">POWERBI-INTEGRATION.md</a> for the
+        Power BI embed documentation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
