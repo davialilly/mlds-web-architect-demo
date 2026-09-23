@@ -88,3 +88,49 @@ Any report embedded here should show aggregate, district-level or
 higher data only, consistent with this site's FERPA statement in
 `index.html` and `README.md`. Student-level Power BI reports belong
 behind MLDS Center's authenticated internal tools, not a public page.
+
+## Real-world addendum: what happened when I actually tried this
+
+Rather than leave this entirely theoretical, I built the mock report in
+Power BI Desktop, loaded the same enrollment/graduation data used
+elsewhere on this site, and attempted to publish it live using **Publish
+to web**, the free, no-license-required path described above.
+
+I ran into a licensing/governance wall that is worth documenting on its
+own merits, since it is exactly the kind of constraint a Web Architect
+runs into in a real organization:
+
+1. My Power BI account is tied to a custom email domain provisioned
+   through a third-party reseller (GoDaddy's Microsoft 365 service).
+   Accounts provisioned this way belong to a **managed tenant**, where
+   the reseller, not the end user, retains most administrative control.
+2. Attempting **File > Embed report > Publish to web** returned:
+   *"Contact your admin to enable embed code creation... This option
+   isn't currently available for Pro workspaces in your region."*
+3. I checked whether I had tenant admin rights myself (Settings >
+   Admin portal > Tenant settings, where Publish to web can be toggled
+   on). I do have partial admin access (a Capacity settings view is
+   visible), but **no Tenant settings option is exposed at all**, which
+   means this account holds a limited administrative role, not full
+   Power BI Service Administrator / Global Administrator rights.
+4. Power BI also blocks account sign-up entirely for major consumer
+   email providers (Gmail, Outlook.com, Yahoo, and similar), by
+   Microsoft's own design, so creating a second, fully independent
+   personal account to sidestep the managed tenant is not a viable
+   workaround either.
+
+**In a production MLDS Center context**, this is solved by asking an
+actual Power BI Service Administrator (or Global Administrator) within
+the organization's real tenant to either enable Publish to web for the
+relevant security group, or, more appropriately for anything beyond
+fully public mock data, to set up **secure embed** with a registered
+Azure AD app and workspace access scoped to the people who should see
+the report. That is a one-time governance conversation, not a technical
+blocker, and it is the same conversation any new hire building this
+integration would need to have on day one.
+
+Given that constraint in this evaluation environment specifically, the
+live page ships with the labeled placeholder panel described above
+rather than a broken or inaccessible embed, and this document carries
+the full, real embed markup and process so the actual integration step
+is a drop-in once workspace access is in place.
