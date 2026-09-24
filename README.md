@@ -4,7 +4,7 @@ Built for the MLDS Center Web Architect interview technical evaluation.
 This is a static site: one HTML page, one stylesheet, one script, and one
 mock JSON dataset, deployed with GitHub Pages.
 
-**Live URL:** _add your GitHub Pages URL here once deployed_
+**Live URL:** https://davialilly.github.io/mlds-web-architect-demo/
 **Repository:** _add your GitHub repository URL here_
 
 ## What this demonstrates
