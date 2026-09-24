@@ -5,7 +5,7 @@ This is a static site: one HTML page, one stylesheet, one script, and one
 mock JSON dataset, deployed with GitHub Pages.
 
 **Live URL:** https://davialilly.github.io/mlds-web-architect-demo/
-**Repository:** _add your GitHub repository URL here_
+**Repository:** https://github.com/davialilly/mlds-web-architect-demo
 
 ## What this demonstrates
 
