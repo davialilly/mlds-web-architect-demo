@@ -132,5 +132,5 @@ integration would need to have on day one.
 Given that constraint in this evaluation environment specifically, I am with the 
 labeled placeholder panel described above rather than a broken or inaccessible embed.  
 
-The full embed markup and process so the actual integration step
+The full embed markup and process are detailed above, with the actual integration step
 is a drop-in once workspace access is in place.
