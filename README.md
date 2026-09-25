@@ -52,16 +52,11 @@ and easy to audit.
 
 ## Deployment process (GitHub Pages)
 
-1. Create a public GitHub repository and push these files to the `main`
+1. Created a public GitHub repository and push these files to the `main`
    branch.
 2. In the repository, go to **Settings > Pages**.
 3. Under **Build and deployment**, set **Source** to **Deploy from a
    branch**, branch **main**, folder **/ (root)**, then **Save**.
-4. GitHub builds and publishes the site, typically at
-   `https://<username>.github.io/<repository-name>/`. This can take a
-   minute or two on first deploy.
-5. Any future push to `main` redeploys automatically; no separate build
-   or release step is required for a static site like this one.
 
 ## How this aligns with MLDS Center requirements
 
@@ -127,5 +122,4 @@ Power BI workspace to publish from.
 - No automated accessibility test report is included; the alignment
   above is based on following WCAG 2.1 AA and USWDS conventions directly
   in the markup and styling. Running an automated scanner (axe or WAVE)
-  against the deployed URL would be a reasonable next step before this
-  pattern is used in production.
+  against the deployed URL would be a reasonable next step before production.
