@@ -91,10 +91,10 @@ behind MLDS Center's authenticated internal tools, not a public page.
 
 ## Real-world addendum: what happened when I actually tried this
 
-Rather than leave this entirely theoretical, I built the mock report in
-Power BI Desktop, loaded the same enrollment/graduation data used
-elsewhere on this site, and attempted to publish it live using **Publish
-to web**, the free, no-license-required path described above.
+I built the mock report in Power BI Desktop, loaded the same 
+enrollment/graduation data used elsewhere on this site, and attempted 
+to publish it live using **Publish to web**, the free, 
+no-license-required path described above.
 
 I ran into a licensing/governance wall that is worth documenting on its
 own merits, since it is exactly the kind of constraint a Web Architect
@@ -125,12 +125,12 @@ the organization's real tenant to either enable Publish to web for the
 relevant security group, or, more appropriately for anything beyond
 fully public mock data, to set up **secure embed** with a registered
 Azure AD app and workspace access scoped to the people who should see
-the report. That is a one-time governance conversation, not a technical
+the report. This is a governance conversation, not a technical
 blocker, and it is the same conversation any new hire building this
 integration would need to have on day one.
 
-Given that constraint in this evaluation environment specifically, the
-live page ships with the labeled placeholder panel described above
-rather than a broken or inaccessible embed, and this document carries
-the full, real embed markup and process so the actual integration step
+Given that constraint in this evaluation environment specifically, I am with the 
+labeled placeholder panel described above rather than a broken or inaccessible embed.  
+
+The full embed markup and process so the actual integration step
 is a drop-in once workspace access is in place.
